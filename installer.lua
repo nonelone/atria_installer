@@ -1,5 +1,7 @@
 -- Let's define a couple variables and functions:
 
+require "packages"
+
 -- Welcome text in ASCII
 local welcome_text = string.format(
 [[
@@ -57,6 +59,28 @@ else
 end
 
 -- Install packages
+print("Running system update...")
+shell_execute("yay -Syyuu --noconfirm --needed")
+
+print("Do you want to install UI packages? [Y/N]")
+local answer = io.read("*l")
+
+if (answer == "Y") or (answer == "y") then
+    local package_list = ""
+    for _, value in ipairs(UX_packages) do
+        package_list = package_list .. " " .. tostring(value)
+    end
+    shell_execute("yay -S", {package_list, '--noconfirm', '--needed'})
+end
+
+--print("Do you want to install UI packages? [Y/N]")
+--local answer = io.read("*l")
+
+--if (answer == "Y") or (answer == "y") then
+    
+--end
+
+
 
 -- Install optional packages
 
@@ -77,6 +101,7 @@ if (answer == "Y") or (answer == "y") then
 end
 
 -- Modify release files
+-- TODO: add icon file!
 print("Do you want to modify release files? [Y/N]")
 local answer = io.read("*l")
 
