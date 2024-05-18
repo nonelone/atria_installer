@@ -1,0 +1,4 @@
+DISTRIB_ID="Atria Linux"
+DISTRIB_RELEASE="rolling"
+DISTRIB_DESCRIPTION="Atria Linux"
+DISTRIB_CODENAME="rolling"
