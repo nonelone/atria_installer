@@ -73,13 +73,25 @@ if (answer == "Y") or (answer == "y") then
     shell_execute("yay -S", {package_list, '--noconfirm', '--needed'})
 end
 
---print("Do you want to install UI packages? [Y/N]")
---local answer = io.read("*l")
+print("Do you want to install Dev packages? [Y/N]")
+local answer = io.read("*l")
 
---if (answer == "Y") or (answer == "y") then
-    
---end
+if (answer == "Y") or (answer == "y") then
+    local package_list = ""
+    for _, value in ipairs(Dev_packages) do
+        package_list = package_list .. " " .. tostring(value)
+    end
+    shell_execute("yay -S", {package_list, '--noconfirm', '--needed'})
+end
 
+print("Do you want to install VSCodium extensions? [Y/N]")
+local answer = io.read("*l")
+
+if (answer == "Y") or (answer == "y") then
+    for _, value in ipairs(VSCodium_packages) do
+        shell_execute("vscodium --install-extension", {value})
+    end
+end
 
 
 -- Install optional packages
