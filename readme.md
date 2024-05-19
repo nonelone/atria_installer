@@ -22,5 +22,6 @@ Atria installer is a lua post-install script created to quickly configure any Ar
 **Why Lua?**
 - I'm not familiar with Ansible and similar tools
 - I'm not the biggest fan of Bash shell  
+
 That's why I decided to make the script in a programming language.  
 My main choices were Lua and Python, but since I write a lot in Python I wanted some diversity in my code.

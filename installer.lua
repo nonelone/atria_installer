@@ -85,7 +85,7 @@ if (answer == "Y") or (answer == "y") then
 end
 
 print("Do you want to install VSCodium extensions? [Y/N]")
-local answer = io.read("*l")
+answer = io.read("*l")
 
 if (answer == "Y") or (answer == "y") then
     for _, value in ipairs(VSCodium_packages) do
@@ -100,7 +100,7 @@ end
 
 -- Install dotfiles
 print("Do you want to install my dotfiles? [Y/N]")
-local answer = io.read("*l")
+answer = io.read("*l")
 
 if (answer == "Y") or (answer == "y") then
     local ok, _, _ = os.rename("~/.development/dotfiles", "~/.development/dotfiles")
@@ -115,12 +115,13 @@ end
 -- Modify release files
 -- TODO: add icon file!
 print("Do you want to modify release files? [Y/N]")
-local answer = io.read("*l")
+answer = io.read("*l")
 
 if (answer == "Y") or (answer == "y") then
     shell_execute("sudo cp lsb-release /etc/lsb-release")
     shell_execute("sudo cp os-release /usr/lib/os-release")
     shell_execute("sudo cp atria-ascii ~/.config/neofetch/")
+    shell_execute("sudo cp atria.png /etc/")
     shell_execute("cat config.conf >> ~/.config/neofetch/config.conf")
     shell_execute("echo alias hyfetch=\"hyfetch --ascii ~/.config/neofetch/atria-ascii\" >> ~/.config/fish/config.fish")
 end
