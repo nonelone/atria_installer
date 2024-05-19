@@ -120,7 +120,9 @@ local answer = io.read("*l")
 if (answer == "Y") or (answer == "y") then
     shell_execute("sudo cp lsb-release /etc/lsb-release")
     shell_execute("sudo cp os-release /usr/lib/os-release")
+    shell_execute("sudo cp atria-ascii ~/.config/neofetch/")
     shell_execute("cat config.conf >> ~/.config/neofetch/config.conf")
+    shell_execute("echo alias hyfetch=\"hyfetch --ascii ~/.config/neofetch/atria-ascii\" >> ~/.config/fish/config.fish")
 end
 
 -- The end
